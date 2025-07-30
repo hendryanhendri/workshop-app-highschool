@@ -3,6 +3,114 @@ Just for workshop purpose
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Prerequisites
+
+Before you begin, you'll need to install the following software on your machine:
+
+### For Windows:
+
+1. **Install Node.js**
+   - Visit [Node.js official website](https://nodejs.org/)
+   - Download the LTS version (recommended)
+   - Run the installer and follow the setup wizard
+   - Verify installation by opening Command Prompt and running:
+     ```cmd
+     node --version
+     npm --version
+     ```
+
+2. **Install Git**
+   - Visit [Git for Windows](https://git-scm.com/download/win)
+   - Download and run the installer
+   - During installation, select "Git Bash Here" option
+   - Verify installation by opening Command Prompt or Git Bash and running:
+     ```cmd
+     git --version
+     ```
+
+3. **Install a Code Editor (Optional but Recommended)**
+   - [Visual Studio Code](https://code.visualstudio.com/)
+   - [Sublime Text](https://www.sublimetext.com/)
+   - [Atom](https://atom.io/)
+
+### For Mac:
+
+1. **Install Node.js**
+   - **Option 1: Direct Download**
+     - Visit [Node.js official website](https://nodejs.org/)
+     - Download the LTS version (recommended)
+     - Run the .pkg installer
+   - **Option 2: Using Homebrew (Recommended)**
+     ```bash
+     # Install Homebrew first if you don't have it
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     
+     # Install Node.js
+     brew install node
+     ```
+   - Verify installation by opening Terminal and running:
+     ```bash
+     node --version
+     npm --version
+     ```
+
+2. **Install Git**
+   - **Option 1: Using Homebrew (Recommended)**
+     ```bash
+     brew install git
+     ```
+   - **Option 2: Direct Download**
+     - Visit [Git official website](https://git-scm.com/download/mac)
+     - Download and run the installer
+   - **Option 3: Xcode Command Line Tools**
+     ```bash
+     xcode-select --install
+     ```
+   - Verify installation by running:
+     ```bash
+     git --version
+     ```
+
+3. **Install a Code Editor (Optional but Recommended)**
+   - [Visual Studio Code](https://code.visualstudio.com/)
+   - [Sublime Text](https://www.sublimetext.com/)
+   - [Atom](https://atom.io/)
+
+## Git Configuration
+
+After installing Git, configure it with your personal information:
+
+```bash
+# Set your name
+git config --global user.name "Your Full Name"
+
+# Set your email
+git config --global user.email "your.email@example.com"
+
+# Set default branch name to main (optional but recommended)
+git config --global init.defaultBranch main
+
+# Verify your configuration
+git config --list
+```
+
+## Project Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hendryanhendri/workshop-app-highschool.git
+   cd workshop-app-highschool
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
 ## Getting Started
 
 First, run the development server:
@@ -37,3 +145,64 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Useful Commands
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+
+# Check for updates
+npm outdated
+
+# Update packages
+npm update
+```
+
+## Troubleshooting
+
+### Common Issues:
+
+1. **Node.js version compatibility**
+   - This project requires Node.js 18.17 or later
+   - Check your version: `node --version`
+   - If you need to update, download the latest LTS from [nodejs.org](https://nodejs.org/)
+
+2. **Port already in use**
+   - If port 3000 is busy, Next.js will automatically use the next available port
+   - You can also specify a different port: `npm run dev -- -p 3001`
+
+3. **Permission errors on Mac/Linux**
+   - If you get permission errors, you might need to fix npm permissions:
+     ```bash
+     sudo chown -R $(whoami) ~/.npm
+     ```
+
+4. **Git authentication issues**
+   - For HTTPS: Use your GitHub username and personal access token
+   - For SSH: Set up SSH keys in your GitHub account
+   - [GitHub authentication guide](https://docs.github.com/en/authentication)
+
+### Getting Help:
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Node.js Documentation](https://nodejs.org/docs/)
+- [Git Documentation](https://git-scm.com/doc)
+- [npm Documentation](https://docs.npmjs.com/)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add some amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
