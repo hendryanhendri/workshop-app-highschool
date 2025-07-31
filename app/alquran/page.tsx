@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const dynamic = "force-dynamic";
 
 interface Surat {
@@ -6,6 +8,13 @@ interface Surat {
   nama_latin: string;
   jumlah_ayat: number;
   arti: string;
+}
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 export default async function AlQuran() {
@@ -19,9 +28,11 @@ export default async function AlQuran() {
           <div className="mt-4 bg-gray-100 rounded-2xl px-2 py-4 sm:px-12 sm:py-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {data.map((surat: Surat) => (
-                <div
+                <Link
                   key={surat.nomor}
-                  className="bg-white rounded-xl shadow-lg p-4 flex flex-col gap-2 transition-colors cursor-pointer hover:bg-green-100"
+                  href={`/surah/${slugify(surat.nama_latin)}`}
+                  className="bg-white rounded-xl shadow-lg p-4 flex flex-col gap-2 transition-colors cursor-pointer hover:bg-green-100 no-underline"
+                  prefetch={false}
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex flex-col items-center justify-center w-12 h-12 rounded-full bg-green-50 border border-green-200">
@@ -33,10 +44,14 @@ export default async function AlQuran() {
                     </div>
                   </div>
                   <div className="flex flex-row flex-wrap gap-2 text-sm text-gray-600">
-                    <span>Jumlah Ayat: <span className="font-bold text-green-700">{surat.jumlah_ayat}</span></span>
-                    <span>Arti: <span className="font-bold text-green-700">{surat.arti}</span></span>
+                    <span>
+                      Jumlah Ayat: <span className="font-bold text-green-700">{surat.jumlah_ayat}</span>
+                    </span>
+                    <span>
+                      Arti: <span className="font-bold text-green-700">{surat.arti}</span>
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
