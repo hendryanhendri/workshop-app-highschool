@@ -2,6 +2,7 @@
 import { notFound } from "next/navigation";
 import SurahPlayer from "./SurahPlayerClient";
 
+
 interface Ayat {
   nomorAyat: number;
   teksArab: string;
@@ -41,8 +42,9 @@ async function getSurahDetail(slug: string): Promise<SurahDetail | null> {
   return detailData.data as SurahDetail;
 }
 
-export default async function Surah({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
+export default async function Surah({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
   if (!slug) return notFound();
 
   const surah = await getSurahDetail(slug);
