@@ -1,7 +1,7 @@
 export default function Infak() {
   return (
     <div>
-      <h1>Ayat</h1>
+      <h1>Infaq</h1>
     </div>
   );
 }
