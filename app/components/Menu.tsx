@@ -17,17 +17,17 @@ export default function Menu() {
           </span>
           <span className="font-bold text-neutral-900 group-hover:text-green-700 transition-colors text-xs sm:text-base text-center">Waktu Salat</span>
         </Link>
-        <Link href="/ayat" className="flex flex-col items-center group flex-1 min-w-0">
-          <span className="rounded-full bg-white p-2 mb-2 flex items-center justify-center">
-            <Image src="/ayat.svg" alt="Ayat" width={48} height={48} />
-          </span>
-          <span className="font-bold text-neutral-900 group-hover:text-green-700 transition-colors text-xs sm:text-base text-center">Ayat</span>
-        </Link>
         <Link href="/wirid" className="flex flex-col items-center group flex-1 min-w-0">
           <span className="rounded-full bg-white p-2 mb-2 flex items-center justify-center">
             <Image src="/doa.svg" alt="Wirid & Doa" width={48} height={48} />
           </span>
           <span className="font-bold text-neutral-900 group-hover:text-green-700 transition-colors text-xs sm:text-base text-center">Wirid & Doa</span>
+        </Link>
+        <Link href="/infak" className="flex flex-col items-center group flex-1 min-w-0">
+          <span className="rounded-full bg-white p-2 mb-2 flex items-center justify-center">
+            <Image src="/infak.svg" alt="Infak" width={48} height={48} />
+          </span>
+          <span className="font-bold text-neutral-900 group-hover:text-green-700 transition-colors text-xs sm:text-base text-center">Infak</span>
         </Link>
       </div>
     </nav>

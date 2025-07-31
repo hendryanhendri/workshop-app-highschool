@@ -11,10 +11,10 @@ export default function Home() {
               <div className="flex-shrink-0">
                 <Image src="/alquran.svg" alt="Al-Quran Logo" width={60} height={60} />
               </div>
-              <div className="ml-0 sm:ml-4 mt-2 sm:mt-0">
-                <h2 className="text-lg font-bold text-green-700">Welcome to Alquran App</h2>
-                <p className="text-base text-gray-700">Explore the Quran, prayer times, and more.</p>
-              </div>
+                <div className="ml-0 sm:ml-4 mt-2 sm:mt-0">
+                <h2 className="text-lg font-bold text-green-700">Selamat datang di Aplikasi Alquran</h2>
+                <p className="text-base text-gray-700">Jelajahi Al-Quran, waktu sholat, dan lainnya.</p>
+                </div>
             </div>
             
             {/* Tambahkan card lain di sini untuk list berikutnya */}
