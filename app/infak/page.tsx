@@ -1,4 +1,4 @@
-export default function AyatPage() {
+export default function Infak() {
   return (
     <div>
       <h1>Ayat</h1>
