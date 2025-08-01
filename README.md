@@ -3,6 +3,11 @@ Just for workshop purpose
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Live Demo
+
+You can access the deployed app here:  
+[https://workshop-app-highschool.vercel.app/](https://workshop-app-highschool.vercel.app/)
+
 ## Prerequisites
 
 Before you begin, you'll need to install the following software on your machine:
