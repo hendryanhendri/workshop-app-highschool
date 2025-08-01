@@ -1,5 +1,6 @@
 "use client";
 import { useState, useMemo } from "react";
+import Link from "next/link";
 
 export default function Doa() {
   interface Doa {
@@ -144,25 +145,40 @@ export default function Doa() {
                     <h2 className="font-bold text-xl text-green-700">{group}</h2>
                   </div>
                   <div className="divide-y divide-gray-200 px-4 py-4">
-                    {doas.map((doa) => (
-                      <div key={doa.id} className="py-3 doa-hover cursor-pointer rounded-md">
-                        <div className="font-medium">{doa.nama}</div>
-                        <div className="flex flex-wrap items-center gap-1 mt-1">
-                          {doa.tag && doa.tag.length > 0 && (
-                            <nav aria-label="breadcrumb" className="flex flex-wrap gap-1">
-                              {doa.tag.map((tag) => (
-                                <span
-                                  key={tag}
-                                  className="text-xs bg-gray-200 text-gray-700 rounded px-2 py-0.5"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
-                            </nav>
-                          )}
-                        </div>
-                      </div>
-                    ))}
+                    {doas.map((doa) => {
+                      const slug = encodeURIComponent(
+                        doa.nama.replace(/\s+/g, "-").toLowerCase()
+                      );
+                      return (
+                        <Link
+                          key={doa.id}
+                          href={`/doa/${slug}`}
+                          className="block py-3 doa-hover cursor-pointer rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
+                          tabIndex={0}
+                          aria-label={`Lihat detail doa ${doa.nama}`}
+                          prefetch={false}
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className="bg-green-100 rounded-full w-8 h-8 flex items-center justify-center">
+                              <span className="text-green-600 text-lg">&#128218;</span>
+                            </div>
+                            <span className="font-medium">{doa.nama}</span>
+                            {doa.tag && doa.tag.length > 0 && (
+                              <nav aria-label="breadcrumb" className="flex flex-wrap gap-1 ml-3">
+                                {doa.tag.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="text-xs bg-gray-200 text-gray-700 rounded px-2 py-0.5"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </nav>
+                            )}
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
