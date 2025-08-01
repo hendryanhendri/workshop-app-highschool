@@ -51,12 +51,12 @@ export default function DoaDetails({ params }: { params: Promise<{ slug: string 
   return (
     <div className="max-w-2xl mx-auto p-4">
       <div className="mb-4 flex items-center gap-2">
-        <a
+        <Link
           href="/doa"
           className="inline-flex items-center text-gray-600 hover:text-green-600 text-sm font-medium"
         >
           &#8592; Kembali ke Daftar Doa
-        </a>
+        </Link>
       </div>
       <div className="bg-white rounded-2xl shadow border border-green-100 p-6">
         <div className="flex flex-col gap-2 mb-4">
